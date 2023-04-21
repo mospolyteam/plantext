@@ -1,25 +1,24 @@
 <template>
-  <button
-    @click="$emit('click')"
-    class="button"
-    :disabled="disabled"
+  <NuxtLink
+    class="button button--link"
+    :to="to"
     :class="[className, {'button--icon': icon, colorClassName: color}]"
     :aria-label="label"
   >
     <slot></slot>
-  </button
-  >
+  </NuxtLink>
 </template>
 
 <script>
 import Button from "@/interfaces/Button";
 
 export default {
-  name: "Button",
+  name: "ButtonLink",
   props: {
-    disabled: {
-      type: Boolean,
-      default: false
+    to: {
+      type: String,
+      default: '#',
+      required: true
     },
     className: {
       type: String | Array,
@@ -41,7 +40,6 @@ export default {
       }
     }
   },
-  emits: ['click'],
   computed: {
     colorClassName() {
       return `button--${this.color}`;

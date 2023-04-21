@@ -4,14 +4,16 @@
 
 <script>
 export default {
-    name: "Icon",
-    props: {},
-    data() {
-        return {}
-    },
-    computed: {},
-    methods: {},
-    created() {},
-    mounted() {}
+  name: "Icon",
+  props: {},
+  data() {
+    return {}
+  },
+  computed: {},
+  methods: {},
+  created() {
+  },
+  mounted() {
+  }
 }
 </script>
