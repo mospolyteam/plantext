@@ -7,8 +7,7 @@
     :aria-label="label"
   >
     <slot></slot>
-  </button
-  >
+  </button>
 </template>
 
 <script>
