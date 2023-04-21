@@ -3,6 +3,8 @@
 </template>
 
 <script>
+// TODO: Реализовать компоненту (Оля)
+
 export default {
     name: "Navigation",
     props: {},
