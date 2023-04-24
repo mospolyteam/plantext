@@ -1,19 +1,25 @@
 <template>
-
+  <label
+    :for="name"
+    class="form__label"
+    :class="className"
+  >
+    <slot></slot>
+  </label>
 </template>
 
 <script>
-// TODO: Реализовать компоненту (Андрей)
-
 export default {
-    name: "FormLabel",
-    props: {},
-    data() {
-        return {}
+  name: "FormLabel",
+  props: {
+    className: {
+      type: String,
+      default: ''
     },
-    computed: {},
-    methods: {},
-    created() {},
-    mounted() {}
+    name: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>

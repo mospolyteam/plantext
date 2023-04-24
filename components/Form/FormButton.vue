@@ -1,19 +1,27 @@
 <template>
-
+  <button
+    @click="$emit('click')"
+    class="button form__button"
+    :class="className"
+    :disabled="disabled"
+  >
+    <slot></slot>
+  </button>
 </template>
 
 <script>
-// TODO: Реализовать компоненту (Андрей)
-
 export default {
-    name: "FormButton",
-    props: {},
-    data() {
-        return {}
+  name: "FormButton",
+  emits: ['click'],
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
     },
-    computed: {},
-    methods: {},
-    created() {},
-    mounted() {}
+    className: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
