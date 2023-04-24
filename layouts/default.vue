@@ -1,15 +1,16 @@
 <template>
   <div>
-    <Nuxt />
+    <TheHeader/>
+    <Nuxt/>
+    <TheFooter/>
   </div>
 </template>
 
 <script>
-export default {
+import TheHeader from "@/components/TheHeader";
+import TheFooter from "@/components/TheFooter";
 
+export default {
+  components: {TheFooter, TheHeader}
 }
 </script>
-
-<style scoped>
-
-</style>
