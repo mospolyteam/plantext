@@ -8,7 +8,6 @@
     :value="value"
     :placeholder="placeholder"
     class="form__input"
-    :class="className"
   >
 </template>
 
@@ -32,10 +31,6 @@ export default {
     value: {
       type: [String, Number, Boolean],
       required: true
-    },
-    className: {
-      type: String,
-      default: ''
     },
     placeholder: {
       type: String,

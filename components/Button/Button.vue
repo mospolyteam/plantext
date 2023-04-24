@@ -3,7 +3,7 @@
     @click="$emit('click')"
     class="button"
     :disabled="disabled"
-    :class="[className, {'button--icon': icon, colorClassName: color}]"
+    :class="[{'button--icon': icon}, colorClassName]"
     :aria-label="label"
   >
     <slot></slot>
@@ -20,10 +20,6 @@ export default {
       type: Boolean,
       default: false
     },
-    className: {
-      type: String | Array,
-      default: ''
-    },
     label: {
       type: String,
       default: ''
@@ -34,9 +30,9 @@ export default {
     },
     color: {
       type: String,
-      default: '',
+      default: 'red',
       validator(value) {
-        return Button.colors[value] !== undefined;
+        return Object.values(Button.colors).includes(value);
       }
     }
   },
@@ -48,3 +44,28 @@ export default {
   }
 }
 </script>
+
+<style>
+  .button {
+    background-color: #D95E32;
+    padding: 5px 35px;
+    color: #F2F1E9;
+    font-size: 18px;
+  }
+
+  .button:disabled {
+    opacity: .7;
+  }
+
+  .button:not(:disabled) {
+    cursor: pointer;
+  }
+
+  .button--green {
+    background-color: #69735C;
+  }
+
+  .button--purple {
+    background-color: #A569BF;
+  }
+</style>

@@ -2,7 +2,6 @@
   <button
     @click="$emit('click')"
     class="button form__button"
-    :class="className"
     :disabled="disabled"
   >
     <slot></slot>
@@ -17,10 +16,6 @@ export default {
     disabled: {
       type: Boolean,
       default: false
-    },
-    className: {
-      type: String,
-      default: ''
     }
   }
 }
