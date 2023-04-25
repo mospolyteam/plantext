@@ -3,7 +3,7 @@
     @click="$emit('click')"
     class="button"
     :disabled="disabled"
-    :class="[{'button--icon': icon}, colorClassName]"
+    :class="[{'button--icon': icon, 'button--big': big}, colorClassName]"
     :aria-label="label"
   >
     <slot></slot>
@@ -34,6 +34,10 @@ export default {
       validator(value) {
         return Object.values(Button.colors).includes(value);
       }
+    },
+    big: {
+      type: Boolean,
+      default: false
     }
   },
   emits: ['click'],
@@ -51,6 +55,7 @@ export default {
     padding: 5px 35px;
     color: #F2F1E9;
     font-size: 18px;
+    display: block;
   }
 
   .button:disabled {
@@ -67,5 +72,9 @@ export default {
 
   .button--purple {
     background-color: #A569BF;
+  }
+
+  .button--big {
+    padding: 15px 35px;
   }
 </style>

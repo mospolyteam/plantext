@@ -2,7 +2,7 @@
   <NuxtLink
     class="button button--link"
     :to="to"
-    :class="[className, {'button--icon': icon, colorClassName: color}]"
+    :class="[{'button--icon': icon, 'button--big': big}, colorClassName]"
     :aria-label="label"
   >
     <slot></slot>
@@ -20,10 +20,6 @@ export default {
       default: '#',
       required: true
     },
-    className: {
-      type: String | Array,
-      default: ''
-    },
     label: {
       type: String,
       default: ''
@@ -36,8 +32,12 @@ export default {
       type: String,
       default: '',
       validator(value) {
-        return Button.colors[value] !== undefined;
+        return Object.values(Button.colors).includes(value);
       }
+    },
+    big: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
