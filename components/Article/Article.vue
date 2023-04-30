@@ -1,11 +1,19 @@
 <template>
-
+    <a href="#" class="article">
+        <img class="article__preview" :src="`${article.preview}`">
+        <p class="article__title">{{ article.title }}</p>
+    </a>
 </template>
 
 <script>
 export default {
     name: "Article",
-    props: {},
+    props: {
+        article: {
+            preview: String,
+            title: String,
+        }
+    },
     data() {
         return {}
     },
@@ -15,3 +23,17 @@ export default {
     mounted() {}
 }
 </script>
+
+<style>
+    .article {
+        display: block;
+        max-width: 387px;
+    }
+    .article:hover {
+        text-decoration: underline;
+    }
+    .article__title {
+        font-size: 24px;
+        max-width: 367px;
+    }
+</style>
