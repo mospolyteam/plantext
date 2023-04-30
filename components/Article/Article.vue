@@ -1,6 +1,9 @@
 <template>
     <a href="#" class="article">
-        <img class="article__preview" :src="`${article.preview}`">
+        <img class="article__preview" 
+            :src="`${article.preview}`" 
+            :alt="article.title"
+        >
         <p class="article__title">{{ article.title }}</p>
     </a>
 </template>

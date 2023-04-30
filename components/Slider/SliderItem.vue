@@ -1,6 +1,6 @@
 <template>
   <div class="slider__slide slide">
-    <img class="slide__cover" :src="`/images/${cover}`">
+    <img class="slide__cover" :src="`${cover}`">
     <slot name="title" />
     <slot name="child" />
   </div>

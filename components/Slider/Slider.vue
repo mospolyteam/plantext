@@ -23,14 +23,15 @@
           </p>
         </template>
         <template v-slot:child>
+          <!-- Заглушка -->
           <div :class="`slide__child slide__child--${slide.childPosition}`">
-            <input type="text"/>
-              <Button 
-                label="Подписаться"
-                color="purple"
-              >
-                Подписаться
-              </Button>
+            <input type="text" />
+            <Button 
+              label="Подписаться"
+              color="purple"
+            >
+              Подписаться
+            </Button>
           </div>
         </template>
       </slider-item>
@@ -64,7 +65,7 @@ export default {
           titleColor: "#F2F1E9",
           titlePosition: 1,
           childPosition: 4,
-          cover: "slide-mail.jpg",
+          cover: "/images/slide-mail.jpg",
         },
         {
           id: 2,
@@ -72,7 +73,7 @@ export default {
           titleColor: "#F2F1E9",
           titlePosition: 2,
           childPosition: 3,
-          cover: "slide-mail.jpg",
+          cover: "/images/slide-mail.jpg",
         },
         {
           id: 3,
@@ -80,7 +81,7 @@ export default {
           titleColor: "#F2F1E9",
           titlePosition: 3,
           childPosition: 1,
-          cover: "slide-mail.jpg",
+          cover: "/images/slide-mail.jpg",
         },
         {
           id: 4,
@@ -88,7 +89,7 @@ export default {
           titleColor: "#F2F1E9",
           titlePosition: 4,
           childPosition: 2,
-          cover: "slide-mail.jpg"
+          cover: "/images/slide-mail.jpg"
         }
       ]
     }
