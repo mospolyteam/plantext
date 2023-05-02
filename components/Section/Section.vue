@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container">
       <div class="row">
-        <h2 class="section__title">{{ title }}</h2>
+        <h2 v-if="title" class="section__title">{{ title }}</h2>
         <slot></slot>
       </div>
     </div>
@@ -15,7 +15,7 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      default: null
     }
   }
 }
