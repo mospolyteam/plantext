@@ -58,7 +58,7 @@
 <script lang="ts">
 import Pagination from "~/components/Pagination/Pagination.vue";
 import Button from "~/components/Button/Button.vue";
-import FormField from "~/components/Form/FormField.vue";
+import FormField from "~/components/Form/FormInput.vue";
 import FormSelect from "~/components/Form/FormSelect.vue";
 import Slider from "~/components/Slider/Slider.vue";
 import Section from "~/components/Section/Section.vue";
