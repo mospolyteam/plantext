@@ -10,12 +10,7 @@
       <p class="book__author">{{ book.author }}</p>
     </div>
     <div class="book__footer">
-      <div class="book__rating">
-        <span class="book__value">{{ book.rating }}</span>
-        <Icon name="star">
-          <IconStar/>
-        </Icon>
-      </div>
+      <Rating class="book__rating" :rating="book.rating" />
       <Button v-if="book.favorite" color="green">В избранном</Button>
       <Button v-else>В избранное</Button>
     </div>
@@ -26,10 +21,11 @@
 import IconStar from "@/components/Icon/IconStar";
 import Icon from "@/components/Icon/Icon";
 import Button from "@/components/Button/Button";
+import Rating from "~/components/Rating/Rating.vue";
 
 export default {
   name: "Book",
-  components: {Button, Icon, IconStar},
+  components: {Rating, Button, Icon, IconStar},
   props: {
     book: {
       id: Number,
@@ -86,10 +82,6 @@ export default {
 
   .book__rating {
     margin-bottom: 10px;
-    display: flex;
-    align-items: flex-start;
-    gap: 5px;
-    font-size: 24px;
   }
 
   .book__footer {
