@@ -44,7 +44,6 @@ export default {
 <style>
   .menu {
     display: flex;
-    align-items: center;
     gap: var(--gap);
     flex-direction: var(--direction);
   }
