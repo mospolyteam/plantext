@@ -1,57 +1,67 @@
 <template>
   <div class="breadcrumbs">
     <ul class="breadcrumbs__list">
-      <BreadcrumbsItem
-        v-for="(item, i) in items"
-        :key="i"
-        :link="item.link"
-      >
-        {{ item.text }}
-      </BreadcrumbsItem>
+      <template v-for="(item, i) in routes">
+        <BreadcrumbsItem :link="item.link">{{ item.text }}</BreadcrumbsItem>
+        <IconRight v-if="i !== routes.length - 1" />
+      </template>
     </ul>
   </div>
 </template>
 
 <script>
 import BreadcrumbsItem from "~/components/Breadcrumbs/BreadcrumbsItem.vue";
+import IconRight from "~/components/Icon/IconRight.vue";
 
 const routesDictionary = {
   'books': 'Книги',
   'discussions': 'Обсуждения',
   'articles': 'Статьи'
 }
+
 export default {
   name: "Breadcrumbs",
-  components: {BreadcrumbsItem},
-  props: {},
-  data() {
-    return {}
+  components: {IconRight, BreadcrumbsItem},
+  props: {
+    current: {
+      type: String,
+      default: ''
+    }
   },
-  computed: {
-    items() {
-      let routes = [
+  data() {
+    return {
+      routes: [
         {
           link: '/',
           text: 'Главная'
         }
-      ];
-
-      return this.$route.path.split('/').reduce((accum, current, index) => {
-        return [...accum, this.createRouteElement(accum[index].link + current + '/', current)];
-      }, routes);
+      ]
     }
   },
+  computed: {},
   methods: {
     createRouteElement(link, current) {
-      // TODO: Сделать обработку случаев, когда текущий путь - это цифра. Необходимо достать название статьи/книги
-      // Есть две идеи. Или брать название в отдельный props, или вытаскивать из API каждый раз.
       return {
         link: link,
-        text: routesDictionary[current]
+        text: /^\d+$/.test(current) ? this.current : routesDictionary[current]
       }
     }
   },
-  mounted() {
+  created() {
+    let splitPath = this.$route.path.split('/');
+    splitPath.shift();
+
+    splitPath.map((element, index) => {
+      this.routes.push(this.createRouteElement(this.routes[index].link + element + '/', element));
+    });
   }
 }
 </script>
+
+<style>
+  .breadcrumbs__list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+</style>
