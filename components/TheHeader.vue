@@ -1,37 +1,32 @@
 <template>
   <header class="header">
     <div class="container">
-      <div class="row">
-        <div class="header__top">
-          <form action="#" class="header__form">
-            <FormField>
-              <FormLabel name="search"/>
-              <FormInput v-model="searchValue" name="search"/>
-            </FormField>
-          </form>
-          <TheLogo class="header__logo"/>
-          <ul class="header__functions">
-            <li class="header__function">
-              <button class="header__button">
-                <IconNotification/>
-              </button>
-            </li>
-            <li class="header__function">
-              <button class="header__button">
-                <IconHeart/>
-              </button>
-            </li>
-            <li class="header__function">
-              <button class="header__button">
-                <IconProfile/>
-              </button>
-            </li>
-          </ul>
-        </div>
-        <nav class="header__nav nav">
+      <Row class="header__top">
+        <form action="#" class="header__form col-md-3">
+          <FormField>
+            <FormLabel name="search" hidden/>
+            <FormInput v-model="searchValue" name="search"/>
+          </FormField>
+        </form>
+        <TheLogo class="header__logo offset-md-2 col-md-2"/>
+        <ul class="header__functions offset-md-2 col-md-3">
+          <HeaderFunction>
+            <IconNotification/>
+          </HeaderFunction>
+          <HeaderFunction>
+            <IconHeart/>
+          </HeaderFunction>
+          <HeaderFunction>
+            <IconProfile/>
+          </HeaderFunction>
+        </ul>
+      </Row>
+      <hr/>
+      <Row>
+        <nav class="header__nav nav col-12">
           <Navigation class="nav__menu" :items="menu"/>
         </nav>
-      </div>
+      </Row>
     </div>
   </header>
 </template>
@@ -45,10 +40,14 @@ import FormInput from "~/components/Form/FormInput.vue";
 import IconNotification from "~/components/Icon/IconNotification.vue";
 import IconHeart from "~/components/Icon/IconHeart.vue";
 import IconProfile from "~/components/Icon/IconProfile.vue";
+import Row from "~/components/Row/Row.vue";
+import HeaderFunction from "~/components/Header/HeaderFunction.vue";
 
 export default {
   name: "TheHeader",
-  components: {IconProfile, IconHeart, IconNotification, FormInput, Navigation, TheLogo, FormLabel, FormField},
+  components: {
+    HeaderFunction,
+    Row, IconProfile, IconHeart, IconNotification, FormInput, Navigation, TheLogo, FormLabel, FormField},
   data() {
     return {
       searchValue: '',
@@ -88,19 +87,9 @@ export default {
 }
 
 .header__top {
-  height: 100px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #1B1917;
-  display: flex;
-  justify-content: space-between;
+  height: 90px;
+  margin-bottom: 10px;
   align-items: center;
-  position: relative;
-}
-
-.header__logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .nav {
@@ -111,10 +100,19 @@ export default {
 .header__functions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 50px;
 }
 
 .header__function {
   height: min-content;
+}
+
+.header__nav {
+  margin-top: 25px;
+}
+
+.header__logo {
+  text-align: center;
 }
 </style>
