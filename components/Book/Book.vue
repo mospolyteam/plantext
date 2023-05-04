@@ -19,13 +19,12 @@
 
 <script>
 import IconStar from "@/components/Icon/IconStar";
-import Icon from "@/components/Icon/Icon";
 import Button from "@/components/Button/Button";
 import Rating from "~/components/Rating/Rating.vue";
 
 export default {
   name: "Book",
-  components: {Rating, Button, Icon, IconStar},
+  components: {Rating, Button, IconStar},
   props: {
     book: {
       id: Number,
