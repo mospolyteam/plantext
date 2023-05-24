@@ -1,11 +1,18 @@
 <template>
-
+  <NuxtLink class="breadcrumbs__item" :to="link">
+    <slot/>
+  </NuxtLink>
 </template>
 
 <script>
 export default {
     name: "BreadcrumbsItem",
-    props: {},
+    props: {
+      link: {
+        type: String,
+        default: ''
+      }
+    },
     data() {
         return {}
     },

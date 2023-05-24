@@ -48,7 +48,7 @@
     <Section class="partners" title="Партнёры">
       <List :gap="35" :size="4">
         <ListItem v-for="partner in partners" :key="partner.id">
-          <Partner :partner="partner" />
+          <Partner :partner="partner"/>
         </ListItem>
       </List>
     </Section>
@@ -58,7 +58,7 @@
 <script lang="ts">
 import Pagination from "~/components/Pagination/Pagination.vue";
 import Button from "~/components/Button/Button.vue";
-import FormField from "~/components/Form/FormField.vue";
+import FormField from "~/components/Form/FormInput.vue";
 import FormSelect from "~/components/Form/FormSelect.vue";
 import Slider from "~/components/Slider/Slider.vue";
 import Section from "~/components/Section/Section.vue";
@@ -73,7 +73,8 @@ export default {
   name: 'IndexPage',
   components: {
     Partner,
-    Discussion, Book, ListItem, Article, Section, Slider, FormSelect, FormField, Button, Pagination, List},
+    Discussion, Book, ListItem, Article, Section, Slider, FormSelect, FormField, Button, Pagination, List
+  },
   data() {
     return {
       articles: [
@@ -183,67 +184,3 @@ export default {
   }
 }
 </script>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600;700&family=Tenor+Sans&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Tenor Sans', sans-serif;
-  background-color: #F2F1E9;
-  color: #1B1917;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 32px;
-}
-
-h3 {
-  font-weight: 400;
-  font-size: 24px;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.about__content {
-  display: flex;
-  align-items: center;
-}
-
-.about__image {
-  margin: -50px 120px 0;
-}
-
-.about__text {
-  text-indent: 30px
-}
-
-.follow__text {
-  font-size: 18px;
-  margin-bottom: 10px;
-  text-indent: 30px
-}
-
-.follow__button {
-  margin: 0 auto;
-}
-</style>

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600;700&family=Tenor+Sans&display=swap');
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Tenor Sans', sans-serif;
+  background-color: #F2F1E9;
+  color: #1B1917;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 32px;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+button {
+  cursor: pointer;
+}
+
+hr {
+  opacity: 1;
+  margin: 0;
+}
+
+.about {
+  &__content {
+    align-items: center;
+  }
+
+  &__image {
+    margin-top: -60px;
+  }
+
+  &__text {
+    text-indent: 30px
+  }
+}
+
+.follow {
+  &__text {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-indent: 30px
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}

@@ -1,42 +1,42 @@
 <template>
-    <a href="#" class="article">
-        <img class="article__preview" 
-            :src="`${article.preview}`" 
-            :alt="article.title"
-        >
-        <p class="article__title">{{ article.title }}</p>
-    </a>
+  <article class="article">
+    <NuxtLink :to="link">
+      <img :src="article.preview" :alt="article.alt" class="article__preview">
+    </NuxtLink>
+    <h3 class="article__title">
+      <NuxtLink :to="link">{{ article.title }}</NuxtLink>
+    </h3>
+  </article>
 </template>
 
 <script>
 export default {
-    name: "Article",
-    props: {
-        article: {
-            preview: String,
-            title: String,
-        }
-    },
-    data() {
-        return {}
-    },
-    computed: {},
-    methods: {},
-    created() {},
-    mounted() {}
+  name: "Article",
+  props: {
+    article: {
+      title: String,
+      id: Number,
+      preview: String,
+      alt: String
+    }
+  },
+  computed: {
+    link() {
+      return '/articles/' + this.article.id
+    }
+  }
 }
 </script>
 
 <style>
-    .article {
-        display: block;
-        max-width: 387px;
-    }
-    .article:hover {
-        text-decoration: underline;
-    }
-    .article__title {
-        font-size: 24px;
-        max-width: 367px;
-    }
+  .article__title {
+    margin-top: 10px;
+    max-width: 80%;
+  }
+
+  .article__preview {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
 </style>

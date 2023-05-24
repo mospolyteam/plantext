@@ -1,19 +1,50 @@
 <template>
-
+  <ul class="menu" :style="variables">
+    <NavigationItem
+      v-for="(item, i) in items"
+      :key="i"
+      :external="item.external"
+      :link="item.link"
+    >
+      {{ item.text }}
+    </NavigationItem>
+  </ul>
 </template>
 
 <script>
-// TODO: Реализовать компоненту (Оля)
+import NavigationItem from "~/components/Navigation/NavigationItem.vue";
 
 export default {
     name: "Navigation",
-    props: {},
-    data() {
-        return {}
+  components: {NavigationItem},
+    props: {
+      gap: {
+        type: [Number, String],
+        default: 30
+      },
+      column: {
+        type: Boolean,
+        default: false
+      },
+      items: {
+        type: Array,
+        default: () => []
+      }
     },
-    computed: {},
-    methods: {},
-    created() {},
-    mounted() {}
+    computed: {
+      variables() {
+        return {
+          '--gap': this.gap + 'px',
+          '--direction': this.column ? 'column' : 'row'
+        }
+      }
+    }
 }
 </script>
+<style>
+  .menu {
+    display: flex;
+    gap: var(--gap);
+    flex-direction: var(--direction);
+  }
+</style>
