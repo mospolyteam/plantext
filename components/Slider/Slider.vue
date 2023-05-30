@@ -149,6 +149,10 @@ export default {
     height: 330px;
     overflow: hidden;
   }
+  .slider__slide {
+    width: 100%;
+    height: 100%;
+  }
   .slider__navigation {
     z-index: 1;
     position: absolute;

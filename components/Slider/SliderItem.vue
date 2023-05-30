@@ -28,6 +28,11 @@ export default {
     visibility: hidden;
     transform: scale(0.75);
   }
+  .slide__cover {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+  }
   .next {
     visibility: hidden;
     left: 100%;
