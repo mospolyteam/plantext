@@ -49,14 +49,17 @@ hr {
 .about {
   &__content {
     align-items: center;
+    display: flex;
   }
 
   &__image {
+    margin: auto;
     margin-top: -60px;
   }
 
   &__text {
-    text-indent: 30px
+    text-indent: 30px;
+    max-width: 66%;
   }
 }
 
