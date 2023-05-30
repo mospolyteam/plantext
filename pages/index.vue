@@ -15,7 +15,7 @@
       </div>
     </Section>
     <Section class="articles" title="Актуальные статьи">
-      <List :gap="20">
+      <List :gap="20" :size="3">
         <ListItem v-for="article in articles" :key="article.id">
           <Article :article="article"/>
         </ListItem>
