@@ -59,6 +59,9 @@ export default {
   .slide__child {
     display: flex;
   }
+  .slide__form > .form__field{
+    display: flex;
+  }
   .slide__title--1, .slide__child--1 {
     top: 30px;
     left: 102px;
