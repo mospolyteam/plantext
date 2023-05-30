@@ -85,6 +85,9 @@ export default {
   }
 
   .book__footer {
+    display: flex;
+    flex-direction: column;
     margin-top: auto;
   }
+  
 </style>
