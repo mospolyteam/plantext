@@ -3,7 +3,7 @@
     <ul class="breadcrumbs__list">
       <template v-for="(item, i) in routes">
         <BreadcrumbsItem :link="item.link" :key="item.id">{{ item.text }}</BreadcrumbsItem>
-        <IconRight v-if="i !== routes.length - 1" :key="icon_`${item.id}`"/>
+        <IconRight v-if="i !== routes.length - 1" :key="item.id"/>
       </template>
     </ul>
   </div>
