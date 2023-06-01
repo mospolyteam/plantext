@@ -28,6 +28,11 @@ export default {
     visibility: hidden;
     transform: scale(0.75);
   }
+  .slide__cover {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+  }
   .next {
     visibility: hidden;
     left: 100%;
@@ -52,6 +57,9 @@ export default {
     color: white;
   }
   .slide__child {
+    display: flex;
+  }
+  .slide__form > .form__field{
     display: flex;
   }
   .slide__title--1, .slide__child--1 {

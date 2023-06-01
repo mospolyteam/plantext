@@ -2,8 +2,8 @@
   <div class="breadcrumbs">
     <ul class="breadcrumbs__list">
       <template v-for="(item, i) in routes">
-        <BreadcrumbsItem :link="item.link">{{ item.text }}</BreadcrumbsItem>
-        <IconRight v-if="i !== routes.length - 1" />
+        <BreadcrumbsItem :link="item.link" :key="item.id">{{ item.text }}</BreadcrumbsItem>
+        <IconRight v-if="i !== routes.length - 1" :key="item.id"/>
       </template>
     </ul>
   </div>

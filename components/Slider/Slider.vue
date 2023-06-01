@@ -25,13 +25,19 @@
         <template v-slot:child>
           <!-- Заглушка -->
           <div :class="`slide__child slide__child--${slide.childPosition}`">
-            <input type="text" />
-            <Button 
-              label="Подписаться"
-              color="purple"
-            >
-              Подписаться
-            </Button>
+            <form action="#" class="slide__form form">
+              <FormField>
+                <FormLabel name="subscribe" hidden/>
+                <FormInput v-model="slideFormValue" name="subscribe" />
+                <Button 
+                  label="Подписаться"
+                  color="purple"
+                >
+                  Подписаться
+                </Button>
+              </FormField>
+            </form>
+            <!-- <input type="text" /> -->
           </div>
         </template>
       </slider-item>
@@ -47,15 +53,20 @@
 
 <script>
 import Button from "~/components/Button/Button.vue";
+import FormField from "~/components/Form/FormField.vue";
+import FormLabel from "~/components/Form/FormLabel.vue";
+import FormInput from "~/components/Form/FormInput.vue";
+import FormButton from "~/components/Form/FormButton.vue";
 
 export default {
   name: "Slider",
   components: {
-    Button
+    Button, FormField, FormLabel, FormInput, FormButton
   },
   props: {},
   data() {
     return {
+      slideFormValue: '',
       currentSlide: 1,
       inProcess: false,
       slides: [
@@ -148,6 +159,10 @@ export default {
     position: relative;
     height: 330px;
     overflow: hidden;
+  }
+  .slider__slide {
+    width: 100%;
+    height: 100%;
   }
   .slider__navigation {
     z-index: 1;

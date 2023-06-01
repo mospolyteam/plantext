@@ -32,6 +32,7 @@ export default {
 }
 
 .section__title {
+  margin-top: 40px;
   margin-bottom: 25px;
 }
 </style>

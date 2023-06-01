@@ -5,7 +5,11 @@
         <form action="#" class="header__form col-md-3">
           <FormField>
             <FormLabel name="search" hidden/>
-            <FormInput v-model="searchValue" name="search"/>
+            <FormInput v-model="searchValue" name="search">
+              <template v-slot:icon>
+                <IconSearch />
+              </template>
+            </FormInput>
           </FormField>
         </form>
         <TheLogo class="header__logo offset-md-2 col-md-2"/>
@@ -40,6 +44,7 @@ import FormInput from "~/components/Form/FormInput.vue";
 import IconNotification from "~/components/Icon/IconNotification.vue";
 import IconHeart from "~/components/Icon/IconHeart.vue";
 import IconProfile from "~/components/Icon/IconProfile.vue";
+import IconSearch from "~/components/Icon/IconSearch.vue";
 import Row from "~/components/Row/Row.vue";
 import HeaderFunction from "~/components/Header/HeaderFunction.vue";
 
@@ -47,7 +52,7 @@ export default {
   name: "TheHeader",
   components: {
     HeaderFunction,
-    Row, IconProfile, IconHeart, IconNotification, FormInput, Navigation, TheLogo, FormLabel, FormField},
+    Row, IconProfile, IconHeart, IconNotification, IconSearch, FormInput, Navigation, TheLogo, FormLabel, FormField},
   data() {
     return {
       searchValue: '',
