@@ -43,7 +43,7 @@
               <Statistic :count="2000" :type="read"/>
               <Statistic :count="20" :type="compilation"/>
             </div>
-            <h3 class="book-page__title">Описание</h3>
+            <h3 id="description" class="book-page__title">Описание</h3>
             <p class="book-page__text">
                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
@@ -55,12 +55,12 @@
               eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat 
               voluptatem. 
             </p>
-            <h3 class="book-page__title">Где купить</h3>
+            <h3 id="shops" class="book-page__title">Где купить</h3>
             <div class="book-page__shops shops">
               <a href="#" class="shops__shop shop">Купить на ЛитРес</a>
               <a href="#" class="shops__shop shop">Купить в ЧитайГород</a>
             </div>
-            <h3 class="book-page__title">Отзывы</h3>
+            <h3 id="reviews" class="book-page__title">Отзывы</h3>
             <div class="book-page__reviews">
               <Review 
                 v-for="(review, index) in reviews" 
@@ -69,7 +69,7 @@
                 class="book-page__review"  
               />
             </div>
-            <h3 class="book-page__title">Подборки</h3>
+            <h3 id="compilations" class="book-page__title">Подборки</h3>
             <Carousel :items="compilations" />
           </div>
           <div class="book-page__shops shops">
@@ -160,7 +160,7 @@ export default {
           },
           {
             text: 'Подборки',
-            link: '#compilation'
+            link: '#compilations'
           },
         ]
       }
