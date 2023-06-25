@@ -22,3 +22,12 @@ export default {
   }
 }
 </script>
+
+<style>
+  .row {
+    
+  }
+  .row-cols-6 {
+
+  }
+</style>
